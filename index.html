@@ -363,6 +363,232 @@ button, a, img, .card {
         padding: 18px;
     }
 }
+/* FIRST PAGE SCRAPBOOK DESIGN */
+
+#scene1 {
+  background: #f5f0ec;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding: 15px;
+}
+
+.scrapbook {
+  min-height: 95vh;
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background-color: #f8f3ee;
+  background-image:
+    radial-gradient(#d9c9c5 1px, transparent 1px);
+  background-size: 17px 17px;
+  border-radius: 18px;
+  padding: 20px 10px;
+  animation: pageAppear 1s ease;
+}
+
+/* Heading */
+
+.birthday-heading {
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  margin-top: 5px;
+}
+
+.letter-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 9px;
+  flex-wrap: nowrap;
+}
+
+.letter-row span {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 7vw, 39px);
+  font-weight: bold;
+  color: #29202a;
+  padding: 7px 9px;
+  box-shadow: 2px 4px 5px #0002;
+  transform: rotate(-3deg);
+}
+
+.letter-row span:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.pink { background: #e99baa; }
+.cream { background: #eadfc9; }
+.blue { background: #a9b8d5; }
+.purple { background: #b4a5ca; }
+.yellow { background: #f2d65d; }
+.red { background: #e5a39b; }
+.green { background: #c1d1aa; }
+
+.to-you {
+  font-family: cursive;
+  font-size: 27px;
+  color: #c66d8d;
+  margin: 12px;
+  transform: rotate(-3deg);
+}
+
+/* Polaroid */
+
+.polaroid {
+  position: absolute;
+  width: 54%;
+  top: 31%;
+  left: 7%;
+  background: #eee5d7;
+  padding: 12px 12px 20px;
+  box-shadow: 4px 7px 12px #0003;
+  transform: rotate(-6deg);
+  z-index: 2;
+  animation: photoFloat 4s ease-in-out infinite;
+}
+
+.photo-frame {
+  height: 220px;
+  background: #d9dce3;
+  overflow: hidden;
+  border: 7px solid #e5e0d9;
+}
+
+.pannu-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid p {
+  text-align: center;
+  font-family: cursive;
+  font-size: 20px;
+  margin: 12px 0 0;
+  color: #29202a;
+}
+
+/* Kittens */
+
+.kitten {
+  position: absolute;
+  width: 37%;
+  height: 185px;
+  object-fit: contain;
+  z-index: 3;
+  filter: drop-shadow(3px 5px 5px #0002);
+  animation: kittenFloat 3s ease-in-out infinite;
+}
+
+.kitten-one {
+  right: 3%;
+  top: 29%;
+  transform: rotate(5deg);
+}
+
+.kitten-two {
+  left: 1%;
+  bottom: 2%;
+  transform: rotate(-5deg);
+  animation-delay: 1s;
+}
+
+/* Decorations */
+
+.strawberry {
+  position: absolute;
+  left: 3%;
+  top: 60%;
+  font-size: 42px;
+  transform: rotate(-15deg);
+  z-index: 4;
+}
+
+.bow {
+  position: absolute;
+  right: 7%;
+  top: 56%;
+  font-size: 45px;
+  transform: rotate(15deg);
+}
+
+.birthday-note {
+  position: absolute;
+  right: 4%;
+  top: 60%;
+  background: #efc3c6;
+  padding: 18px 13px;
+  font-family: cursive;
+  font-size: 19px;
+  text-align: center;
+  transform: rotate(7deg);
+  box-shadow: 2px 4px 6px #0002;
+}
+
+.birthday-note span {
+  display: block;
+  color: #a13d63;
+}
+
+.little-star {
+  position: absolute;
+  font-size: 35px;
+  color: #29202a;
+}
+
+.star-one { top: 27%; left: 3%; }
+.star-two { top: 28%; right: 4%; }
+.star-three { bottom: 20%; right: 8%; }
+
+.cake-decoration {
+  position: absolute;
+  bottom: 1%;
+  right: 4%;
+  width: 34%;
+  transform: rotate(5deg);
+}
+
+.cake-decoration img {
+  width: 100%;
+  border-radius: 10px;
+  filter: drop-shadow(2px 4px 5px #0002);
+}
+
+/* Animations */
+
+@keyframes photoFloat {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(-4deg) translateY(-7px); }
+}
+
+@keyframes kittenFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+
+@keyframes pageAppear {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 400px) {
+  .photo-frame {
+    height: 175px;
+  }
+
+  .kitten {
+    height: 150px;
+  }
+
+  .birthday-note {
+    font-size: 16px;
+  }
+}
 </style>
 </head>
 
@@ -381,18 +607,79 @@ button, a, img, .card {
 
 <!-- SCENE 1 -->
 <section class="scene active" id="scene1">
-    <div class="decoration">🦋 🎀 ✨</div>
-    <div class="card">
-        <div class="decoration">💗 🌷 💗</div>
-        <h1>Happy Birthday, Pannu!</h1>
-        <p>Welcome to a little world created just for you.</p>
-        <p>A place filled with love, memories and little surprises.</p>
-        <div class="decoration">🌈 ☁️ 🦋</div>
-        <button class="main-btn" onclick="nextScene(2)">
-            Enter Your Little World ✨
-        </button>
+<section class="scene active" id="scene1"
+         onclick="nextScene(2)"
+         style="cursor:pointer;">
+
+  <div class="scrapbook">
+
+    <!-- Birthday heading -->
+    <div class="birthday-heading">
+      <div class="letter-row">
+        <span class="pink">H</span>
+        <span class="cream">A</span>
+        <span class="blue">P</span>
+        <span class="purple">P</span>
+        <span class="yellow">Y</span>
+      </div>
+
+      <div class="letter-row">
+        <span class="red">B</span>
+        <span class="purple">I</span>
+        <span class="pink">R</span>
+        <span class="yellow">T</span>
+        <span class="green">H</span>
+        <span class="blue">D</span>
+        <span class="pink">A</span>
+        <span class="cream">Y</span>
+      </div>
+
+      <p class="to-you">to You...</p>
     </div>
-    <div class="decoration">🌸 💕 🌸</div>
+
+    <!-- Main Polaroid photo -->
+    <div class="polaroid">
+      <div class="photo-frame">
+        <img
+          src="https://drive.google.com/file/d/1c7RokOXJKJ2BhAy5LYifZDSqVRdyZ8lY/view?usp=drivesdk"
+          alt="Pannu"
+          class="pannu-photo">
+      </div>
+      <p>Make a wish!</p>
+    </div>
+
+    <!-- Decorative kitten -->
+    <img
+      class="kitten kitten-one"
+      src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500"
+      alt="Cute kitten">
+
+    <img
+      class="kitten kitten-two"
+      src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500"
+      alt="Cute kitten">
+
+    <!-- Decorations -->
+    <div class="strawberry">🍓</div>
+    <div class="bow">🎀</div>
+
+    <div class="birthday-note">
+      Today<br>is all<br>about<br>you!
+      <span>♥</span>
+    </div>
+
+    <div class="little-star star-one">☆</div>
+    <div class="little-star star-two">☆</div>
+    <div class="little-star star-three">☆</div>
+
+    <div class="cake-decoration">
+      <img
+        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400"
+        alt="Birthday cake">
+    </div>
+
+  </div>
+</section>
 </section>
 
 <!-- SCENE 2 -->
