@@ -236,6 +236,133 @@ input {
     .gift-options { gap: 8px; }
     .gift { padding: 18px 5px; }
 }
+/* =================================
+   PANNU'S LITTLE BLUE SCRAPBOOK
+   New visual theme
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+    --paper: #fffdf7;
+    --blue: #9dbbd9;
+    --dark-blue: #294c70;
+    --light-blue: #e4eff9;
+    --navy: #203d5c;
+    --ink: #354b63;
+    --pink: #f5dce3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--paper) !important;
+    background-image:
+        radial-gradient(#9dbbd9 1px, transparent 1px) !important;
+    background-size: 18px 18px !important;
+    color: var(--ink) !important;
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+/* Headings */
+
+h1, h2, h3 {
+    font-family: 'DM Serif Display', serif !important;
+    color: var(--dark-blue) !important;
+    letter-spacing: 0.5px;
+}
+
+/* Paragraphs */
+
+p {
+    font-family: 'Patrick Hand', cursive !important;
+    color: var(--ink);
+    font-size: 19px;
+}
+
+/* Buttons */
+
+button {
+    background: var(--dark-blue) !important;
+    color: white !important;
+    border: 2px solid white !important;
+    border-radius: 14px !important;
+    padding: 12px 22px !important;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 700 !important;
+    box-shadow: 3px 4px 0px var(--blue);
+    transition: transform 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-4px) rotate(-1deg);
+}
+
+/* Cards and sections */
+
+.card, .scene, .gift-card,
+.container, .letter, .photo-card {
+    background: var(--paper) !important;
+    border: 2px solid var(--blue) !important;
+    border-radius: 12px !important;
+    box-shadow: 4px 5px 0px #c5d9eb !important;
+}
+
+/* Photos */
+
+img {
+    border: 5px solid white;
+    border-radius: 4px;
+    box-shadow: 3px 5px 12px rgba(35, 65, 95, 0.18);
+}
+
+/* Gift illustrations */
+
+.gift-card {
+    transition: transform 0.3s ease;
+}
+
+.gift-card:hover {
+    transform: rotate(-2deg) scale(1.04);
+}
+
+/* Links */
+
+a {
+    color: var(--dark-blue) !important;
+}
+
+/* Decorative scrapbook details */
+
+::selection {
+    background: var(--blue);
+    color: white;
+}
+
+/* Smooth transitions */
+
+button, a, img, .card {
+    transition: all 0.3s ease;
+}
+
+/* Mobile appearance */
+
+@media (max-width: 600px) {
+    body {
+        background-size: 16px 16px !important;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .card, .scene {
+        margin: 12px;
+        padding: 18px;
+    }
+}
 </style>
 </head>
 
