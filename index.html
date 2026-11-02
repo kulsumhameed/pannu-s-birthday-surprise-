@@ -44,7 +44,7 @@ p{line-height:1.75;color:#796d80;font-size:1rem}
 .gift-icon{font-size:3.4rem;display:block;margin-bottom:12px}
 .gift-choice strong{font-family:'Playfair Display',serif;font-size:1.25rem}
 .clue{display:none;margin:16px auto 0;max-width:470px;padding:20px 22px;border-radius:20px;background:#f8edf4;border:1px solid #efd8e5;text-align:left;animation:appear .35s ease}
-.clue.show{display:block}
+.clue.show{display:block !important; opacity:1; visibility:visible}
 .clue small{display:block;letter-spacing:.15em;text-transform:uppercase;color:#a17e98;font-weight:700;margin-bottom:8px}
 .clue p{margin:0;color:#6d5d73}
 .nav{display:flex;justify-content:center;gap:12px;margin-top:26px}
@@ -108,8 +108,8 @@ footer{font-size:.75rem;color:#ad9eb1;margin-top:25px}
    <button class="gift-choice" onclick="reveal('letter')"><span class="gift-icon">💌</span><strong>A letter</strong><br><small>Something from the heart</small></button>
    <button class="gift-choice" onclick="reveal('gift')"><span class="gift-icon">🎁</span><strong>A gift</strong><br><small>A little something for you</small></button>
   </div>
-  <div class="clue" id="letterClue"><small>Clue no. 01 · The letter</small><p id="letterText">Your letter clue will go here. Replace this with a hint about the place where you've hidden the letter.</p></div>
-  <div class="clue" id="giftClue"><small>Clue no. 02 · The gift</small><p id="giftText">Your gift clue will go here. Replace this with a hint about the place where you've hidden the gift.</p></div>
+  <div class="clue" id="letterClue"><small>Clue no. 01 · The letter</small><p id="letterText">A little story holds more than words... Look between the pages of one of your books. A secret note is waiting to be discovered. 💌</p></div>
+  <div class="clue" id="giftClue"><small>Clue no. 02 · The gift</small><p id="giftText">A special surprise is tucked away where you check your reflection. Open the doors beneath! 🎁</p></div>
   <footer>Happy birthday once again, Pannu ♡</footer>
  </div>
 </section>
@@ -130,7 +130,10 @@ document.getElementById('candle').addEventListener('click',()=>{
  }
 });
 function reveal(which){
- document.getElementById(which+'Clue').classList.toggle('show');
+ const clue = document.getElementById(which + 'Clue');
+ clue.classList.add('show');
+ clue.style.display = 'block';
+ clue.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 </script>
 </body>
